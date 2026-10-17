@@ -1,0 +1,35 @@
+# m01l05-06 · A data perimeter from both sides of an endpoint
+
+**Lesson:** [Cloud Network Isolation: VPC Peering & PrivateLink](https://learnsome.tech/learn/cloudsecurity-course/m01l05) (lesson 1.5, module 1: Multi-Account Cloud Architecture & Isolation) · Free  
+**Check:** Checker
+
+## Goal
+
+You can trace a packet through peered VPC route tables, spot CIDR overlaps that block peering, and choose between peering and PrivateLink by what each one exposes.
+
+## Files
+
+- [`starter/perimeter.yaml`](starter/perimeter.yaml): the listing from the lesson
+- [`check.json`](check.json): how `./check` runs and checks this lab
+
+## Steps
+
+1. Go to the starter: `cd labs/m01l05/m01l05-06/starter`
+2. Read `perimeter.yaml` the way the lesson builds it:
+   - Lines 1–12: the endpoint policy
+   - Lines 13–20: the bucket policy
+3. Edit `perimeter.yaml` and check it: `yamllint perimeter.yaml`.
+4. Check it from the repository root: `./check m01l05-06`.
+5. The site offers these commands for this lab; the first is the default, and the only one graded. Run another with `./check m01l05-06 --command=<id>`:
+   - `lint` (Lint): `yamllint -d relaxed perimeter.yaml`
+   - `strict` (Lint strictly): `yamllint perimeter.yaml`
+
+## How to check
+
+`./check m01l05-06` copies `starter/` into a scratch directory and runs `yamllint perimeter.yaml` there, the way the site's lab sandbox does: that directory is the working directory and `HOME`, `LANG=C.UTF-8`, `TZ=UTC`, a limit of 10 seconds and 256 KiB of output per stream.
+
+This is a checker lab: it lints the YAML with yamllint's `relaxed` rules: it passes when there are no errors. The site shows the checker's report without grading; `./check` passes when the checker finds no errors.
+
+---
+
+[Open the lesson on LearnSome.tech](https://learnsome.tech/learn/cloudsecurity-course/m01l05) · [All labs of this lesson](../README.md) · [Course README](../../../README.md)

@@ -1,0 +1,23 @@
+{
+  "name": "Cloud Security & DevSecOps Engineering labs",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "remoteUser": "vscode",
+  "updateRemoteUserUID": false,
+  "customizations": {
+    "codespaces": {
+      "openFiles": [
+        "README.md"
+      ]
+    },
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "hashicorp.terraform",
+        "redhat.vscode-yaml",
+        "timonwong.shellcheck"
+      ]
+    }
+  }
+}
